@@ -1,6 +1,8 @@
 library(ellmer)
 
-ask <- function(question) isTRUE(utils::askYesNo(question))
+ask <- function(question) {
+  isTRUE(utils::askYesNo(question))
+}
 
 list_files <- tool(
   function(path = ".") {
@@ -17,10 +19,14 @@ list_files <- tool(
 )
 
 read_file <- tool(
-  function(path) paste(readLines(path, warn = FALSE), collapse = "\n"),
+  function(path) {
+    paste(readLines(path, warn = FALSE), collapse = "\n")
+  },
   name = "read_file",
   description = "Read a text file.",
-  arguments = list(path = type_string("Path to the text file to read."))
+  arguments = list(
+    path = type_string("Path to the text file to read.")
+  )
 )
 
 write_file <- tool(
@@ -67,11 +73,7 @@ run_shell <- tool(
 
 main <- function() {
   chat <- chat_anthropic(
-    system_prompt = paste(
-      "You are a coding agent running from R.",
-      "Work in the current directory.",
-      "Use tools to inspect files, edit files, and run shell commands.",
-    )
+    system_prompt = "You are a coding agent running from R. Work in the current directory. Use tools to inspect files, edit files, and run shell commands."
   )
 
   chat$register_tools(list(list_files, read_file, write_file, run_shell))
