@@ -27,4 +27,4 @@ After reading [Hadley's newsletter](https://substack.com/home/post/p-200800827) 
 
 The whole demo lives in `agent.R`. You only need a valid `ANTHROPIC_API_KEY` environment variable and can then run `agent.R` interactively in R. It turns out that you only need about ~50 lines of code to get something that behaves like Claude Code.
 
-It's definitely much less capable and isn't meant to be used as-is, but it's interesting to see that these kinds of tools are not necessarily complicated once you take the time to understand how they work.
+It's definitely much less capable and isn't meant to be used as-is, but it's interesting to see that these kinds of tools are **not necessarily complicated** once you **take the time to understand how they work**.
