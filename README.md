@@ -1,26 +1,5 @@
-# r-claude-code
+# R Claude Code
 
-A tiny Claude Code-like coding agent written in R with
-[ellmer](https://ellmer.tidyverse.org/).
+After reading [Hadley's newsletter](https://substack.com/home/post/p-200800827) about what are agents, I started to wonder how easy it would be to create a Claude Code like app entirely in R, using [`ellmer`](https://ellmer.tidyverse.org/).
 
-The whole demo lives in `agent.R`: it creates an Anthropic chat, registers a
-few local tools, and starts `ellmer::live_console()`.
-
-## Run
-
-Add your Anthropic credentials in `.Rprofile`, then run:
-
-```sh
-Rscript agent.R
-```
-
-Try prompts like:
-
-```text
-List the files in this repo.
-Read README.md.
-Create a hello.txt file.
-Run ls -la.
-```
-
-The agent asks before writing files or running shell commands.
+The whole demo lives in `agent.R`, you only need to have a valid `ANTHROPIC_API_KEY` environment variable and then run `agent.R` interactively in R.
